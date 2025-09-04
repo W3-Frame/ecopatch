@@ -1,5 +1,3 @@
-
-````markdown
 # 🌱 EcoPatch – ReFi Hackathon Project (ETHAccra 2025)
 
 **Tagline:**  
@@ -8,7 +6,6 @@
 EcoPatch is a **Regenerative Finance (ReFi)** platform that enables ecological restoration in Africa through **NFT land patches**.  
 Each patch is represented as an NFT, generating **carbon credits redistributed** to holders while directly supporting local communities.  
 
----
 
 ## ✨ Features
 
@@ -18,7 +15,6 @@ Each patch is represented as an NFT, generating **carbon credits redistributed**
 - 🛒 **Built-in marketplace** → Buy & sell tokenized land patches  
 - 📊 **Admin & User Dashboard** → Manage projects, track impact, claim rewards  
 
----
 
 ## 🧩 User Flow
 
@@ -29,7 +25,6 @@ Each patch is represented as an NFT, generating **carbon credits redistributed**
 5. **Carbon credits** generated are redistributed to holders  
 6. NFTs can be **resold** on the marketplace  
 
----
 
 ## 🛠️ Tech Stack
 
@@ -40,7 +35,6 @@ Each patch is represented as an NFT, generating **carbon credits redistributed**
 - **Storage** → IPFS / Filecoin (metadata, ecological reports)  
 - **Identity** → ENS for projects & communities  
 
----
 
 ## 📦 Installation
 
@@ -73,7 +67,6 @@ npx hardhat compile
 npx hardhat deploy --network base-sepolia
 ```
 
----
 
 ## 📊 Smart Contracts
 
@@ -81,7 +74,6 @@ npx hardhat deploy --network base-sepolia
 * **EcoPatchPool.sol** → Funding pool & redistribution logic
 * **EcoPatchAdmin.sol** → Zone creation & project management
 
----
 
 ## 🎥 Demo
 
@@ -93,7 +85,6 @@ npx hardhat deploy --network base-sepolia
   * Minted NFT Patch
   * Marketplace (mock)
 
----
 
 ## 🏆 Targeted Bounties
 
@@ -103,7 +94,6 @@ npx hardhat deploy --network base-sepolia
 * 🪪 **ENS** → Project & community identity
 * 🗄 **Filecoin** → Ecological data storage
 
----
 
 ## 🚀 Roadmap
 
@@ -112,7 +102,6 @@ npx hardhat deploy --network base-sepolia
 * 🔜 **Phase 3** : Official carbon credits certification + full marketplace
 * 🔜 **Phase 4** : Multi-country Africa rollout + NGO partnerships
 
----
 
 ## 👥 Team
 
@@ -121,7 +110,6 @@ npx hardhat deploy --network base-sepolia
 * **Frontend** → Georginio
 * **Design & Branding** → Zeus
 
----
 
 ## 🤝 Contribution
 
@@ -133,12 +121,7 @@ We welcome contributions!
 4. Push (`git push origin feature/my-feature`)
 5. Open a Pull Request
 
----
 
 ## 📜 License
 
 MIT License © 2025 EcoPatch Team
-
-```
-
----
