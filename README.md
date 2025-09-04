@@ -1,100 +1,144 @@
-# 🏗 Scaffold-ETH 2
 
-<h4 align="center">
-  <a href="https://docs.scaffoldeth.io">Documentation</a> |
-  <a href="https://scaffoldeth.io">Website</a>
-</h4>
+````markdown
+# 🌱 EcoPatch – ReFi Hackathon Project (ETHAccra 2025)
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+**Tagline:**  
+👉 “Invest in the land. Grow the future.”  
 
-⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, Viem, and Typescript.
+EcoPatch is a **Regenerative Finance (ReFi)** platform that enables ecological restoration in Africa through **NFT land patches**.  
+Each patch is represented as an NFT, generating **carbon credits redistributed** to holders while directly supporting local communities.  
 
-- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
-- 🪝 **[Custom hooks](https://docs.scaffoldeth.io/hooks/)**: Collection of React hooks wrapper around [wagmi](https://wagmi.sh/) to simplify interactions with smart contracts with typescript autocompletion.
-- 🧱 [**Components**](https://docs.scaffoldeth.io/components/): Collection of common web3 components to quickly build your frontend.
-- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
+---
 
-![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/b237af0c-5027-4849-a5c1-2e31495cccb1)
+## ✨ Features
 
-## Requirements
+- 🎋 **Tokenized ecological zones** → Fractionalized into **NFTs (ERC-721)**  
+- 💧 **Decentralized funding pool** → Users co-finance projects  
+- 🌍 **Carbon credits redistribution** → Proportional to NFTs held  
+- 🛒 **Built-in marketplace** → Buy & sell tokenized land patches  
+- 📊 **Admin & User Dashboard** → Manage projects, track impact, claim rewards  
 
-Before you begin, you need to install the following tools:
+---
 
-- [Node (>= v20.18.3)](https://nodejs.org/en/download/)
-- Yarn ([v1](https://classic.yarnpkg.com/en/docs/install/) or [v2+](https://yarnpkg.com/getting-started/install))
-- [Git](https://git-scm.com/downloads)
+## 🧩 User Flow
 
-## Quickstart
+1. **Admin** creates a zone (location, description, number of patches)  
+2. The zone is **fractionalized into NFTs** representing patches  
+3. **Users purchase NFTs** directly or via a funding pool  
+4. Once funding is reached → NFTs are **auto-minted**  
+5. **Carbon credits** generated are redistributed to holders  
+6. NFTs can be **resold** on the marketplace  
 
-To get started with Scaffold-ETH 2, follow the steps below:
+---
 
-1. Install dependencies if it was skipped in CLI:
+## 🛠️ Tech Stack
 
-```
-cd my-dapp-example
+- **Smart Contracts** → Solidity, Hardhat, Remix  
+- **Frontend & Dashboard** → [Scaffold-ETH 2](https://github.com/scaffold-eth/scaffold-eth-2) (Next.js + Wagmi + RainbowKit)  
+- **Blockchain** → Ethereum Testnet (**Base Sepolia**)  
+- **NFT Standard** → ERC-721  
+- **Storage** → IPFS / Filecoin (metadata, ecological reports)  
+- **Identity** → ENS for projects & communities  
+
+---
+
+## 📦 Installation
+
+### 1. Clone the repo
+```bash
+git clone https://github.com/W3-Frame/ecopatch
+cd ecopatch
+````
+
+### 2. Install dependencies
+
+```bash
+cd frontend
 yarn install
 ```
 
-2. Run a local network in the first terminal:
+### 3. Run the app locally
 
-```
-yarn chain
-```
-
-This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `packages/hardhat/hardhat.config.ts`.
-
-3. On a second terminal, deploy the test contract:
-
-```
-yarn deploy
+```bash
+yarn dev
 ```
 
-This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the network. You can also customize the deploy script.
+App will run at [http://localhost:3000](http://localhost:3000) 🌍
 
-4. On a third terminal, start your NextJS app:
+### 4. Deploy smart contracts (Hardhat)
+
+```bash
+cd contracts
+npx hardhat compile
+npx hardhat deploy --network base-sepolia
+```
+
+---
+
+## 📊 Smart Contracts
+
+* **EcoPatchNFT.sol** → Manages tokenized land patches (ERC-721)
+* **EcoPatchPool.sol** → Funding pool & redistribution logic
+* **EcoPatchAdmin.sol** → Zone creation & project management
+
+---
+
+## 🎥 Demo
+
+* **Pitch Deck (PDF)** → \[Insert link]
+* **Demo Video (≤4 min)** → \[Insert Loom/YouTube link]
+* **Screenshots**
+
+  * Admin Dashboard
+  * Minted NFT Patch
+  * Marketplace (mock)
+
+---
+
+## 🏆 Targeted Bounties
+
+* 🌱 **DeFi & ReFi Track** → regenerative finance use case
+* 🧑‍💻 **BuidlGuidl** → Scaffold-ETH MVP
+* 🔗 **Base** → Deployed on Base Sepolia
+* 🪪 **ENS** → Project & community identity
+* 🗄 **Filecoin** → Ecological data storage
+
+---
+
+## 🚀 Roadmap
+
+* ✅ **Hackathon MVP** : NFT + Pool contract + Dashboard
+* 🔜 **Phase 2** : ENS + Filecoin + Chainlink Oracles
+* 🔜 **Phase 3** : Official carbon credits certification + full marketplace
+* 🔜 **Phase 4** : Multi-country Africa rollout + NGO partnerships
+
+---
+
+## 👥 Team
+
+* **Solidity Dev & Team Lead** → Hermann
+* **Product & Solidity Dev** → Laboré
+* **Frontend** → Georginio
+* **Design & Branding** → Zeus
+
+---
+
+## 🤝 Contribution
+
+We welcome contributions!
+
+1. Fork the repo
+2. Create a branch (`git checkout -b feature/my-feature`)
+3. Commit (`git commit -m 'add my feature'`)
+4. Push (`git push origin feature/my-feature`)
+5. Open a Pull Request
+
+---
+
+## 📜 License
+
+MIT License © 2025 EcoPatch Team
 
 ```
-yarn start
-```
 
-Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the `Debug Contracts` page. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
-
-Run smart contract test with `yarn hardhat:test`
-
-- Edit your smart contracts in `packages/hardhat/contracts`
-- Edit your frontend homepage at `packages/nextjs/app/page.tsx`. For guidance on [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) and configuring [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) checkout the Next.js documentation.
-- Edit your deployment scripts in `packages/hardhat/deploy`
-
-## 🚀 Setup ERC-721 NFT Extension
-
-This extension introduces an ERC-721 token contract and demonstrates how to use it, including getting the total supply and holder balance, listing all NFTs from the collection and NFTs from the connected address, and how to transfer NFTs.
-
-The ERC-721 Token Standard introduces a standard for Non-Fungible Tokens ([EIP-721](https://eips.ethereum.org/EIPS/eip-721)), in other words, each token is unique.
-
-The ERC-721 token contract is implemented using the [ERC-721 token implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol) from OpenZeppelin.
-
-The ERC-721 token implementation uses the [ERC-721 Enumerable extension](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/extensions/ERC721Enumerable.sol) from OpenZeppelin to list all tokens from the collection and all the tokens owned by an address. You can remove this if you plan to use an indexer, like a Subgraph or Ponder ([extensions available](https://scaffoldeth.io/extensions)).
-
-### Setup
-
-Deploy your contract running ```yarn deploy```
-
-### Interact with the NFT
-
-Start the front-end with ```yarn start``` and go to the _/erc721_ page to interact with your deployed ERC-721 token.
-
-You can check the code at ```packages/nextjs/app/erc721```.
-
-
-## Documentation
-
-Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2.
-
-To know more about its features, check out our [website](https://scaffoldeth.io).
-
-## Contributing to Scaffold-ETH 2
-
-We welcome contributions to Scaffold-ETH 2!
-
-Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.
+---
