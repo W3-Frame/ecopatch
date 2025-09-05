@@ -1,6 +1,6 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { Contract, parseEther } from "ethers";
+// import { Contract, parseEther } from "ethers"; // Unused imports
 
 /**
  * Deploys a contract named "YourContract" using the deployer account and

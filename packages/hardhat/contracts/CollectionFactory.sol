@@ -8,19 +8,8 @@ contract CollectionFactory {
 
     event CollectionCreated(address indexed creator, address collection);
 
-    function createCollection(
-        string memory name,
-        string memory symbol,
-        string memory baseURI,
-        uint256 supply
-    ) public {
-        NFTCollection collection = new NFTCollection(
-            name,
-            symbol,
-            baseURI,
-            supply,
-            msg.sender
-        );
+    function createCollection(string memory name, string memory symbol, string memory baseURI, uint256 supply) public {
+        NFTCollection collection = new NFTCollection(name, symbol, baseURI, supply, msg.sender);
         allCollections.push(address(collection));
         emit CollectionCreated(msg.sender, address(collection));
     }

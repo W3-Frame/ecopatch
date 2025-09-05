@@ -1,41 +1,75 @@
 @import "tailwindcss";
-
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap");
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
   --shadow-center: 0 0 12px -2px rgb(0 0 0 / 0.05);
   --animate-pulse-fast: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  /* EcoPatch Custom Colors */
+  --ecopatch-green-primary: #228b22;
+  --ecopatch-green-secondary: #2e7d32;
+  --ecopatch-green-light: #66bb6a;
+  --ecopatch-brown: #5a3e2b;
+  --ecopatch-brown-light: #8d6e63;
+  --ecopatch-cream: #f8f6f0;
+  --ecopatch-gold: #ffb300;
 }
 
 @plugin "daisyui" {
   themes:
+    ecopatch,
     light,
     dark --prefersdark;
 }
 
 @plugin "daisyui/theme" {
-  name: "light";
+  name: "ecopatch";
 
-  --color-primary: #93bbfb;
-  --color-primary-content: #212638;
-  --color-secondary: #dae8ff;
-  --color-secondary-content: #212638;
-  --color-accent: #93bbfb;
-  --color-accent-content: #212638;
-  --color-neutral: #212638;
+  --color-primary: #228b22;
+  --color-primary-content: #ffffff;
+  --color-secondary: #2e7d32;
+  --color-secondary-content: #ffffff;
+  --color-accent: #66bb6a;
+  --color-accent-content: #ffffff;
+  --color-neutral: #5a3e2b;
   --color-neutral-content: #ffffff;
   --color-base-100: #ffffff;
-  --color-base-200: #f4f8ff;
-  --color-base-300: #dae8ff;
-  --color-base-content: #212638;
-  --color-info: #93bbfb;
-  --color-success: #34eeb6;
-  --color-warning: #ffcf72;
-  --color-error: #ff8863;
+  --color-base-200: #f8f6f0;
+  --color-base-300: #e8f5e8;
+  --color-base-content: #1b5e20;
+  --color-info: #2196f3;
+  --color-success: #228b22;
+  --color-warning: #ffb300;
+  --color-error: #d32f2f;
 
-  --radius-field: 9999rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1rem;
+  --tt-tailw: 6px;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+
+  --color-primary: #228b22;
+  --color-primary-content: #ffffff;
+  --color-secondary: #e8f5e8;
+  --color-secondary-content: #1b5e20;
+  --color-accent: #66bb6a;
+  --color-accent-content: #ffffff;
+  --color-neutral: #5a3e2b;
+  --color-neutral-content: #ffffff;
+  --color-base-100: #ffffff;
+  --color-base-200: #f8f6f0;
+  --color-base-300: #e8f5e8;
+  --color-base-content: #1b5e20;
+  --color-info: #2196f3;
+  --color-success: #228b22;
+  --color-warning: #ffb300;
+  --color-error: #d32f2f;
+
+  --radius-field: 0.75rem;
   --radius-box: 1rem;
   --tt-tailw: 6px;
 }
@@ -84,20 +118,68 @@
     border-color: var(--color-gray-200, currentColor);
   }
 
-  p {
-    margin: 1rem 0;
-  }
-
-  body {
-    min-height: 100vh;
+  /* EcoPatch Typography System */
+  html {
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    scroll-behavior: smooth;
   }
 
   h1,
   h2,
   h3,
-  h4 {
+  h4,
+  h5,
+  h6 {
+    font-family: "Montserrat", system-ui, sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
     margin-bottom: 0.5rem;
-    line-height: 1;
+    color: var(--ecopatch-green-primary);
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 1.875rem;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    margin: 1rem 0;
+    line-height: 1.6;
+  }
+
+  body {
+    min-height: 100vh;
+    font-family: "Inter", system-ui, sans-serif;
+    background-color: var(--color-base-100);
+    color: var(--color-base-content);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Smooth transitions for better UX */
+  * {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  *:focus {
+    outline: 2px solid var(--ecopatch-green-primary);
+    outline-offset: 2px;
   }
 }
 
@@ -106,19 +188,114 @@
   background: var(--color-base-200);
 }
 
+/* EcoPatch Component Styles */
 .btn {
-  @apply shadow-md;
+  @apply shadow-md font-medium;
+  border-radius: var(--radius-field);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px -5px rgba(34, 139, 34, 0.25);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--ecopatch-green-primary) 0%, var(--ecopatch-green-secondary) 100%);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--ecopatch-green-secondary) 0%, var(--ecopatch-green-primary) 100%);
 }
 
 .btn.btn-ghost {
   @apply shadow-none;
 }
 
+.btn.btn-ghost:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.card {
+  @apply shadow-lg border border-green-100;
+  transition: all 0.3s ease-in-out;
+  border-radius: var(--radius-box);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -8px rgba(34, 139, 34, 0.15);
+}
+
+.stat {
+  border-radius: var(--radius-box);
+  transition: all 0.2s ease-in-out;
+}
+
+.stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(34, 139, 34, 0.1);
+}
+
+.tab {
+  transition: all 0.2s ease-in-out;
+}
+
+.tab-active {
+  background: linear-gradient(135deg, rgba(34, 139, 34, 0.1) 0%, rgba(102, 187, 106, 0.1) 100%);
+  border-color: var(--ecopatch-green-primary);
+  color: var(--ecopatch-green-primary);
+}
+
+.input,
+.select,
+.textarea {
+  border-radius: var(--radius-field);
+  transition: all 0.2s ease-in-out;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--ecopatch-green-primary);
+  box-shadow: 0 0 0 2px rgba(34, 139, 34, 0.1);
+}
+
 .link {
   text-underline-offset: 2px;
+  transition: all 0.2s ease-in-out;
 }
 
 .link:hover {
   opacity: 80%;
+  color: var(--ecopatch-green-primary);
 }
-  
+
+/* Loading animations */
+.loading {
+  color: var(--ecopatch-green-primary);
+}
+
+/* Badge styles */
+.badge {
+  border-radius: var(--radius-field);
+}
+
+.badge-success {
+  background: var(--ecopatch-green-primary);
+  color: white;
+}
+
+/* Toast notification positioning */
+.toast {
+  z-index: 9999;
+}
+
+/* Glassmorphism effect for cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(34, 139, 34, 0.1);
+}
