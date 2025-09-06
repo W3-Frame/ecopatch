@@ -102,6 +102,7 @@ ecopatch/
 ```
 
  **EcoPath LandingPage** → [LandingPage](https://ecopathlanding.netlify.app/)
+ **EcoPath Project** → [Ecopath](https://ecopathproject.netlify.app/)
 
 ## ✨ Features
 
