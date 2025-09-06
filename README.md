@@ -102,8 +102,11 @@ ecopatch/
 ```
 
  **EcoPath LandingPage** → [LandingPage](https://ecopathlanding.netlify.app/)
+
  **EcoPath Project** → [Ecopath Project](https://ecopathproject.netlify.app/)
+
 **Design EcoPath** → [Design EcoPath](https://www.figma.com/design/rjWB8Hr5BNXkrJX8wQJw1M/ECOPATCH--Copy-?m=auto&t=Q0CA39gde7HPShTs-1)
+
 **Deck EcoPath** → [Deck EcoPath](https://docs.google.com/presentation/d/1YABJdzce3tsgbZKZyRu38So92SP2_xTf/edit?usp=sharing&ouid=117085036503625808136&rtpof=true&sd=true)
 
 
