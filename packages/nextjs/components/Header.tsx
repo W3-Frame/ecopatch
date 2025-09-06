@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { hardhat } from "viem/chains";
@@ -22,47 +21,6 @@ type HeaderMenuLink = {
   href: string;
   icon?: React.ReactNode;
   adminOnly?: boolean;
-};
-
-const ADMIN_ADDRESS = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
-
-export const MenuLinks = () => {
-  const { address } = useAccount();
-  const isAdmin = address?.toLowerCase() === ADMIN_ADDRESS.toLowerCase();
-
-  const links: HeaderMenuLink[] = [
-    {
-      label: "Home",
-      href: "/",
-    },
-    {
-      label: "Marketplace",
-      href: "/marketplace",
-      icon: <ShoppingBagIcon className="h-4 w-4" />,
-    },
-    {
-      label: "Dashboard",
-      href: "/dashboard",
-      icon: <ChartBarIcon className="h-4 w-4" />,
-    },
-    ...(isAdmin
-      ? [
-          {
-            label: "Admin",
-            href: "/admin",
-            icon: <Cog6ToothIcon className="h-4 w-4" />,
-            adminOnly: true,
-          },
-        ]
-      : []),
-    {
-      label: "Debug Contracts",
-      href: "/debug",
-      icon: <BugAntIcon className="h-4 w-4" />,
-    },
-  ];
-
-  return links;
 };
 
 export const menuLinks: HeaderMenuLink[] = [
@@ -137,14 +95,6 @@ export const Header = () => {
     <div className="sticky top-0 bg-white border-b border-gray-200 z-20 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0">
-            <div className="h-10 w-10 relative">
-              <Image src="/Logo_2.png" alt="EcoPatch Logo" fill className="object-contain" />
-            </div>
-            <span className="text-xl font-bold text-gray-900 hidden sm:block">ECOPATCH</span>
-          </Link>
-
           {/* Search Bar - Center */}
           <div className="flex-1 max-w-lg mx-4 lg:mx-8">
             <form onSubmit={handleSearch} className="relative">

@@ -1,10 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { useAccount } from "wagmi";
 import { MagnifyingGlassIcon, WalletIcon } from "@heroicons/react/24/outline";
-import { GlobeEuropeAfricaIcon } from "@heroicons/react/24/outline";
 
 export default function AppHeader() {
   const { address, isConnected } = useAccount();
@@ -17,12 +15,6 @@ export default function AppHeader() {
     <header className="bg-white border-b border-gray-200 px-6 py-4">
       <div className="flex items-center justify-between">
         {/* Logo */}
-        <Link href="/dashboard" className="flex items-center space-x-3">
-          <div className="h-8 w-8 bg-emerald-800 rounded-lg flex items-center justify-center">
-            <GlobeEuropeAfricaIcon className="h-5 w-5 text-white" />
-          </div>
-          <span className="text-xl font-bold text-gray-900">ECOPATCH</span>
-        </Link>
 
         {/* Search Bar */}
         <div className="flex-1 max-w-xl mx-8">
