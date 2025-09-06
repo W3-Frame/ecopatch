@@ -82,7 +82,7 @@ export const MyNfts = () => {
         <p className="text-xl">{balance ? balance.toString() : 0} tokens</p>
       </div>
       {myNfts.length > 0 && (
-        <div className="flex flex-wrap gap-4 my-8 px-5 justify-center">
+        <div className="flex flex-wrap gap-3 my-8 px-5 justify-center">
           {myNfts.map(item => (
             <NFTCard nft={item} key={item.id} transfer={true} />
           ))}
